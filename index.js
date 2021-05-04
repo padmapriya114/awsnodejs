@@ -12,15 +12,14 @@ app.use(
   })
 )
 
-// GET Request to root URL (/)
 app.get('/', (request, response) => {
   response.json({Welcome: 'How to create API with Node.js,EXPRESS and PostgreSQL' })
 })
 
-// Endpoints
+
 
 app.get('/countries', db.getCountries)
-app.get('/countries/:id', db.getCountryById)
+app.get('/countries/:id', db.getCountryByID)
 app.post('/countries', db.createCountry)
 app.put('/countries/:id', db.updateCountry)
 app.delete('/countries/:id', db.deleteCountry)
@@ -29,3 +28,4 @@ app.delete('/countries/:id', db.deleteCountry)
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })
+
